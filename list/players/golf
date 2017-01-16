@@ -1,0 +1,37 @@
+
+players=[]
+
+
+def menu():
+  choice=input("Type 1 to add a item, 2 to remove a item and 3 to edit a item and 4 to view the list")
+  if choice=="1":
+    additem()
+  if choice=="2":
+    deleteitem()
+  elif choice=="4":
+    printall()
+
+def additem():
+  global christmaslist
+  item=input("what do you want to add to the christmas list?: ")
+  christmaslist.append(item)
+  menu()
+
+def deleteitem():
+  global christmaslist
+  item=input("What item do you want to remove? ")
+  if item in christmaslist:
+    christmaslist.remove(item)
+  else:
+    print("Sorry but that item could not be found. ")
+  menu()
+  
+def printall():
+  global christmaslist
+  index=0
+  while index < len(christmaslist):
+    print("The Players are", players[index])
+    index=index+1
+  menu()
+  
+menu()

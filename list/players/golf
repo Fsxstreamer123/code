@@ -1,5 +1,4 @@
 
-
 players=[]
 
 
@@ -14,18 +13,24 @@ def menu():
 
 def additem():
   global players
-  item=input("what player do you want to add to the players list?: ")
+  item=input("What player do you want to add to the players list?: ")
   players.append(item)
-  while len(players) < 12:
-      additem()
-  else:
+  if item == "stop":
+      players.remove("stop")
       menu()
+  else:
+      while len(players) < 12:
+          additem()
+      else:
+          menu()
+  menu()
 
 def deleteitem():
   global players
-  item=input("What item do you want to remove? ")
+  item=input("Which player do you want to remove? ")
   if item in players:
     players.remove(item)
+    
   else:
     print("Sorry but that item could not be found. ")
   menu()

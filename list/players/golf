@@ -13,7 +13,7 @@ def menu():
 
 def addplayer():
   global players
-  player=input(what player do you want to add?: )
+  player=input("what player do you want to add?: ")
   players.append(player)
   if item == "stop":
       players.remove("stop")

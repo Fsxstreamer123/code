@@ -5,16 +5,16 @@ players=[]
 def menu():
   choice=input("Type 1 to add a item, 2 to remove a item and 3 to view the list")
   if choice=="1":
-    additem()
+    addplayer()
   if choice=="2":
-    deleteitem()
+    deleteplayer()
   elif choice=="3":
     printall()
 
-def additem():
+def addplayer():
   global players
-  item=input("What player do you want to add to the players list?: ")
-  players.append(item)
+  player=input(what player do you want to add?: )
+  players.append(player)
   if item == "stop":
       players.remove("stop")
       menu()
@@ -25,11 +25,11 @@ def additem():
           menu()
   menu()
 
-def deleteitem():
+def deleteplayer():
   global players
-  item=input("Which player do you want to remove? ")
-  if item in players:
-    players.remove(item)
+  player=input("Which player do you want to remove? ")
+  if player in players:
+    players.remove(player
     
   else:
     print("Sorry but that item could not be found. ")

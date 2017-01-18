@@ -2,7 +2,7 @@
 players=[]
 
 
-def menu():
+def menu(): #allows people to chose what function they want
   choice=input("Type 1 to add a item, 2 to remove a item and 3 to view the list")
   if choice=="1":
     addplayer()
@@ -11,12 +11,12 @@ def menu():
   elif choice=="3":
     printall()
 
-def addplayer():
+def addplayer(): #allows people to add a player
   global players
   player=input("what player do you want to add?: ")
   players.append(player)
   if player == "stop":
-      players.remove("stop")
+      players.remove("stop") #delets the stop name from the list before it returns to the menu
       menu()
   else:
       while len(players) < 12:
@@ -25,16 +25,16 @@ def addplayer():
           menu()
   menu()
 
-def deleteplayer():
+def deleteplayer(): #allows you to delete a player
   global players
   player=input("Which player do you want to remove? ")
   if player in players:
     players.remove(player)
   else:
-    print("Sorry but that item could not be found. ")
+    print("Sorry but that item could not be found. ") #stops it from handeling errors
   menu()
   
-def printall():
+def printall(): #prints all the names out
   global players
   index=0
   while index < len(players):
@@ -42,4 +42,4 @@ def printall():
     index=index+1
   menu()
   
-menu()
+menu() #creates a loop whenever menu() is typed

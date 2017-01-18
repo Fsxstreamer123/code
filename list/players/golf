@@ -15,12 +15,12 @@ def addplayer():
   global players
   player=input("what player do you want to add?: ")
   players.append(player)
-  if item == "stop":
+  if player == "stop":
       players.remove("stop")
       menu()
   else:
       while len(players) < 12:
-          additem()
+          addplayer()
       else:
           menu()
   menu()
@@ -29,8 +29,7 @@ def deleteplayer():
   global players
   player=input("Which player do you want to remove? ")
   if player in players:
-    players.remove(player
-    
+    players.remove(player)
   else:
     print("Sorry but that item could not be found. ")
   menu()

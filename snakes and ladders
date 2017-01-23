@@ -1,0 +1,21 @@
+import random
+
+def menu():
+    print("Welcome To this two player Snakes and ladders game")
+    choice=input("Type start to start the game")
+    if choice == "start":
+        playgame()
+    if choice == "debug roll":
+        dice(random)
+        menu()
+
+def dice(random):
+    min =1
+    max =6
+    roll=input("would you like to role the dice?: ")
+    while roll == "yes" or roll == "y":
+        print("Rolling the dices...")
+        print("The values are....")
+        return random.randint(min, max)
+menu()
+
